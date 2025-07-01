@@ -1,0 +1,19 @@
+# Core Flask and Web Components
+Flask
+Flask-SQLAlchemy
+Flask-Migrate
+Flask-Login
+Flask-WTF
+python-dotenv
+werkzeug
+
+# Background Task Processing
+celery
+redis
+
+# Web Scraping
+playwright
+
+# Utilities
+gunicorn
+psycopg2-binary
