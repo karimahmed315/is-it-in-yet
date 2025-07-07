@@ -1,7 +1,6 @@
 # Is it In Yet? - Real-Time Restock & Deal Alert System
 
-**Is it In Yet?** is a powerful, automated web service that monitors e-commerce product pages and sends real-time alerts to users the moment an item is restocked or goes on sale. Built with a robust Python backend and a clean, user-friendly interface, this project is designed to be a scalable, monetizable side hustle for a solo developer.
-
+**Is it In Yet?** is a powerful, automated web service that monitors e-commerce product pages and sends real-time alerts to users the moment an item is restocked or goes on sale. Built with a robust Python backend and a clean, user-friendly interface.
 ## Project Vision
 
 The core problem this service solves is **scarcity and opportunity**. High-demand products (GPUs, limited-edition sneakers, concert tickets, etc.) sell out in seconds. Manually checking for restocks is tedious and ineffective. "Is it In Yet?" automates this process, giving users a competitive advantage by notifying them instantly of availability.
