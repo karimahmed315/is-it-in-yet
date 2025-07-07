@@ -1,0 +1,23 @@
+<!-- app/templates/login.html -->
+{% extends "base.html" %}
+{% from "_form_macros.html" import render_field %}
+
+{% block title %}Login - Is it In Yet?{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <h2>Welcome Back</h2>
+    <p>Log in to view your dashboard and manage your alerts.</p>
+    <form method="POST" action="{{ url_for('auth.login') }}" novalidate>
+        {{ form.hidden_tag() }}
+        {{ render_field(form.email, placeholder="your@email.com") }}
+        {{ render_field(form.password, placeholder="Your Password") }}
+        <div class="form-field-inline">
+            {{ render_field(form.remember_me) }}
+        </div>
+        {{ render_field(form.submit, class="btn btn-primary btn-block") }}
+    </form>
+    <p class="form-footer-text">Don't have an account? <a href="{{ url_for('auth.signup') }}">Sign Up</a></p>
+</div>
+{% endblock %}
+```html

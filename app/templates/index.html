@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Is it In Yet?{% endblock %}
+
+{% block content %}
+<div class="hero-section">
+    <div class="container text-center">
+        <h1 class="hero-title">Stop Checking. Start Getting.</h1>
+        <p class="hero-subtitle">Get real-time email alerts the moment that must-have item is back in stock or on sale. Never miss out again.</p>
+        <div class="hero-cta">
+            <a href="{{ url_for('auth.signup') }}" class="btn btn-primary btn-lg">Create Your First Alert</a>
+        </div>
+    </div>
+</div>
+
+<div class="features-section">
+    <div class="container">
+        <div class="feature">
+            <h3>1. Add a Product</h3>
+            <p>Paste the URL of any product from a major online store. We'll start watching it for you.</p>
+        </div>
+        <div class="feature">
+            <h3>2. We Watch. You Wait.</h3>
+            <p>Our system checks for restocks and price drops 24/7, so you don't have to.</p>
+        </div>
+        <div class="feature">
+            <h3>3. Get Notified Instantly</h3>
+            <p>The second we detect a change, we'll send a notification straight to your inbox.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

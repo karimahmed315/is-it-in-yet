@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% from "_form_macros.html" import render_field %}
+
+{% block title %}Dashboard - Is it In Yet?{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="dashboard-header">
+        <h1>Your Dashboard</h1>
+        <p>Add a product URL below to start tracking. We'll notify you when it's back in stock.</p>
+    </div>
+
+    <!-- Add Alert Form -->
+    <div class="add-alert-form-container">
+        <form method="POST" action="{{ url_for('main.dashboard') }}" class="add-alert-form" novalidate>
+            {{ form.hidden_tag() }}
+            <div class="form-field">
+                {{ render_field(form.product_url) }}
+            </div>
+            <div class="form-submit">
+                {{ form.submit(class="btn btn-primary") }}
+            </div>
+        </form>
+    </div>
+
+    <!-- Alerts Display Section -->
+    <div class="alerts-section">
+        <h2>Your Active Alerts</h2>
+        {% if alerts %}
+            <div class="alert-grid">
+                {% for alert in alerts %}
+                <div class="alert-card">
+                    <div class="alert-card-body">
+                        <p class="product-url-display"><a href="{{ alert.product_url }}" target="_blank">{{ alert.product_url[:60] }}...</a></p>
+                        <span class="status-badge status-{{ alert.status.lower().replace(' ', '-') }}">
+                            {{ alert.status }}
+                        </span>
+                    </div>
+                    <div class="alert-card-footer">
+                        <span>Added: {{ alert.created_at.strftime('%d %b %Y') }}</span>
+                        <!-- We will add a delete button here later -->
+                        <a href="#" class="delete-link">Delete</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="alert-card-placeholder">
+                <p>You have no active alerts. Add one above to get started!</p>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
